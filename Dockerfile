@@ -3,7 +3,7 @@ MAINTAINER yutask
 
 RUN yum update -y && \
     yum groupinstall -y "Development Tools" && \
-    yum install -y perl-devel gdbm-devel openssl-devel tar bzip2 mysql-devel && \
+    yum install -y perl-devel gdbm-devel openssl-devel tar bzip2 && \
     yum clean all
 
 ENV PERL_VERSION 5.20.1
@@ -18,4 +18,4 @@ RUN curl -sL http://cpanmin.us/ | /opt/perl/bin/perl - --notest App::cpanminus
 
 RUN cpanm Amon2@6.13
 RUN cpanm Carton
-
+EXPOSE 5000
